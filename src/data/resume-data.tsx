@@ -149,7 +149,7 @@ export const RESUME_DATA = {
     },
     {
       company:"ESTU Google Developers Student Club",
-      badges: ["Volunteering"],
+      badges: ["Volunteering", "Student Club"],
       title: "Core Team Organisation Member",
       start: "10/2023",
       end: "present",
