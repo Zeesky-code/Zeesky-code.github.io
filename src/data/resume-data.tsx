@@ -27,7 +27,7 @@ export const RESUME_DATA = {
   about:
     "A 3rd-year Computer Engineering major interested in Information Retrieval and NLP",
   summary:
-    `Highly motivated third-year undergraduate student with a strong interest in legal information retrieval (IR) and Natural Language Processing (NLP). Particularly interested in exploring the application of NLP techniques for enhancing access to legal information.` + `\nCurrently working on a personal project focused on improving the accuracy of Optical Character Recognition (OCR) results for Turkish legal documents through post-processing techniques.  Welcome to discuss this project further or any other aspects of my interests in legal IR and NLP.`,
+    `Highly motivated third-year undergraduate student with a passion for software engineering and a keen interest in OOP and Java.` + `\nI have experience in Java and SpringBoot through coursework and previous internships and currently working on personal projects. I am also love sharing my knowledge and doing this as a TA in a Database Management System course this semester. I am open to discussing my experinces and projects in SWE further.`,
   avatarUrl: "https://avatars.githubusercontent.com/u/71593672?v=4",
   personalWebsiteUrl: "https://jarocki.me",
   contact: {
@@ -69,9 +69,9 @@ export const RESUME_DATA = {
       start: "07/2023",
       end: "03/2024",
       description:
-        ["Improved the accuracy of an algorithm for detecting names of parties, dates and case citations from legal documents.",
-        "Designed and developed microservices architecture leveraging Spring Boot, Tesseract, and Apache PDFBox to orchestrate and deploy advanced algorithms for detecting court judgments from scanned law journals.",
-        "Conducted research on information retrieval methods for Turkish legal content, focusing on legal information extraction and OCR enhancement techniques."
+        ["Developed RESTful APIs with SpringBoot, Tesseract and ApachePDFBox to extract court judgements from URLS.",
+        "Implemented a log storage pipeline using ElasticSearch, Logstash and Kibana enabling real-time analysis of logs generated.",
+        "Conducting research for new information retrieval methods for legal documents."
         ],
     },
     {
@@ -83,8 +83,8 @@ export const RESUME_DATA = {
       start: "04/2023",
       end: "11/2023",
       description:
-      ["Spearheaded the development of RESTful APIs using the MERN (MongoDB, Express.js, React.js, Node.js) stack for the library user platform. ",
-      "Elevated code quality and reliability by implementing comprehensive unit testing strategies,resulting in a notable 40% increase in code coverage",
+      ["Spearheaded the development of RESTful APIs using the MERN (MongoDB, Express.js, React.js, Node.js) stack for the new library user platform. ",
+      "Elevated code quality and reliability by implementing unit and integration tests, resulting in a notable 40% increase in code coverage",
       ],
     },
   ],
@@ -99,29 +99,41 @@ export const RESUME_DATA = {
     "JDBC",
     "Apache OpenNLP",
     "ElasticSearch",
+    "Kibana",
+    "Logstash",
     "Maven",
     "Git",
     "Tesseract"
   ],
   projects: [
     {
-      title: "Turkish Poetry Similarity Analyzer",
-      techStack: ["Java", "NLP", "Apache OpenNLP"],
+      title: "Globe Trotter",
+      techStack: ["Java", "Spring MVC", "SpringBoot", "MongoDB", "Elastic BeanStalk", "AWS", "Git"],
       description:
-        "Developed a Java application to analyze the semantic similarity between Turkish poems using NLP techniques. Focused on Nazim Hikmet's poems. Employed Apache OpenNLP for text pre-processing and stemming/lemmatization. Implemented cosine similarity for semantic closeness measurement.",
+        "A Spring Boot web application deployed on AWS Elastic Beanstalk that allows users to create trips, add destinations, and manage itinerary details.",
       link: {
         label: "See Project", 
-        href: "https://github.com/Zeesky-code/turkish-poetry-similarity", 
+        href: "http://globetrotter.eu-north-1.elasticbeanstalk.com/", 
       },
     },
     {
-      title: "Judgment Extractor (Turkish Legal Text)",
-      techStack: ["NLP", "Regular Expressions", "NER"],
+      title: "Burger Bun",
+      techStack: ["Node.js", "Express.js", "Socket.io", "HTML/CSS","MongoDB"],
       description:
-        "Built a system to automatically extract Turkish court judgments from legal journals. Combined NLP techniques (text pre-processing, NER, keyword extraction) with regular expressions to identify judgments based on legal entities, keywords, and document structure.",
+        "A restaurant website with a restaurant chatbot that allows users to see menu items and place, checkout and delete orders without creating a user account.",
       link: {
-        label: "Judgment Extractor", 
-        href: "https://github.com/Zeesky-code/pdf-extractor", 
+        label: "See project", 
+        href: "https://burger-bun.onrender.com/", 
+      },
+    },
+    {
+      title: "Turkish Poetry Similarity Analyzer",
+      techStack: ["Java", "Maven", "Apache OpenNLP", "Git"],
+      description:
+        "Developed a Java application to analyze the semantic similarity between Nazim Hikmet's (my favourite poet) poems. Implemented cosine similarity for semantic closeness measurement.",
+      link: {
+        label: "See Project", 
+        href: "https://github.com/Zeesky-code/turkish-poetry-similarity", 
       },
     },
     {
