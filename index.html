@@ -160,7 +160,7 @@
 
 
                 <!-- 3. ABOUT ME WINDOW (Finder) -->
-                <div class="os-window" id="window-about" style="width: 550px; height: 350px; opacity: 0; display:none;">
+                <div class="os-window" id="window-about" style="width: 680px; height: 380px; opacity: 0; display:none;">
                     <div class="window-header">
                         <div class="traffic-lights">
                             <div class="light red" onclick="toggleWindow('window-about')"></div>
@@ -175,29 +175,42 @@
                             style="width: 150px; background: rgba(240,240,240,0.8); backdrop-filter: blur(10px); padding: 15px; border-right: 1px solid rgba(0,0,0,0.1);">
                             <div style="font-size: 11px; color: #888; margin-bottom: 5px; font-weight: 600;">Favorites
                             </div>
-                            <div class="sidebar-item active">🏠 Home</div>
-                            <div class="sidebar-item">📺 Desktop</div>
-                            <div class="sidebar-item">📂 Documents</div>
-                            <div class="sidebar-item">⬇️ Downloads</div>
+                            <div class="sidebar-item active">Home</div>
+                            <div class="sidebar-item">Desktop</div>
+                            <div class="sidebar-item">Documents</div>
+                            <div class="sidebar-item">Downloads</div>
                         </div>
 
                         <!-- Main Content -->
                         <div style="flex: 1; padding: 25px; background: rgba(255,255,255,0.5);">
                             <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
                                 <div
-                                    style="width: 70px; height: 70px; background: linear-gradient(135deg, #ddd, #fff); border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display:flex; align-items:center; justify-content:center; font-size:30px;">
-                                    👨‍💻</div>
+                                    style="width: 80px; height: 80px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.15); overflow: hidden; border: 3px solid #fff; flex-shrink: 0;">
+                                    <img src="assets/biometric.png" alt="Zainab"
+                                        style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                </div>
                                 <div>
-                                    <h2 style="font-size: 20px; font-weight: 600; color: #333;">The User</h2>
-                                    <p style="color: #666;">Full Stack Engineer</p>
+                                    <h2 style="font-size: 20px; font-weight: 600; color: #333;">Zainab</h2>
+                                    <p style="color: #666;">Engineer & Master's Student</p>
                                 </div>
                             </div>
-                            <p style="line-height: 1.6; color: #444;">
-                                Specializing in building scalable distributed systems and actionable machine learning
-                                pipelines.
-                                <br><br>
-                                Open the <b>Terminal</b> for my code, or <b>Graphs</b> for my data.
-                            </p>
+                            <div
+                                style="line-height: 1.6; color: #444; font-size: 13px; overflow-y: auto; max-height: 200px;">
+                                <p style="margin-bottom: 12px;">
+                                    Hello! I’m Zainab, an engineer who loves to build stuff. My journey began with a fascination for the foundational logic of
+                                    computer engineering, leading me to specialize in Java backend development.
+                                    I’ve worked on fun web applications and microservices
+                                    for diverse projects, from university systems to legal-tech.
+                                </p>
+                                <p style="margin-bottom: 12px;">
+                                    As a current Master’s student, I have expanded my focus to Artificial Intelligence. I'm currently do some Data Analysis and ML projects, especially for Healthcare projects.
+                                    I believe data tells storeis and we can use them to learn many things. 
+                                </p>
+                                <p>
+                                    I love solving problems and writing about them. You'll probably find me buidling tools to make my life easier or participating in ML competitions driven by a desire to solve real-world problems through
+                                    technology.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
