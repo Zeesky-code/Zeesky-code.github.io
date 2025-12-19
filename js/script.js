@@ -22,6 +22,10 @@ window.addEventListener('load', () => {
             dock.style.opacity = '1';
             dock.style.transform = 'translate(-50%, 0)';
 
+            // UX Improvement: Auto-open "About Me" so HR doesn't have to search
+            setTimeout(() => {
+                toggleWindow('window-about');
+            }, 800);
         }, 500);
 
     }, 2800); // slightly longer than the 2.5s bar to let it sit at 100% briefly
