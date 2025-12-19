@@ -286,6 +286,7 @@
             <!-- THE DOCK -->
             <!-- Using high-quality macOS Big Sur icons from GitHub (Raw) -->
             <div class="dock-container">
+                <!-- ... dock items ... -->
                 <div class="dock-item" data-title="Finder" onclick="toggleWindow('window-about')">
                     <img src="assets/icons/finder.png" alt="Finder">
                     <div class="dock-indicator" id="ind-window-about"></div>
@@ -311,6 +312,26 @@
                 <div class="dock-item" data-title="Trash">
                     <img src="assets/icons/trash.png" alt="Trash">
                 </div>
+            </div>
+
+            <!-- Sticky Note 1: Tip -->
+            <div id="note-1" class="sticky-note" style="top: 100px; right: 50px; transform: rotate(2deg);">
+                <p>💡 <b>Tip:</b></p>
+                <p>You can drag these windows around!</p>
+                <br>
+                <p style="font-size: 12px; color: #666;">(Try clicking the red button to minimize)</p>
+            </div>
+
+            <!-- Sticky Note 2: Mini Bio -->
+            <div id="note-2" class="sticky-note"
+                style="top: 100px; left: 50px; background: #c7f2e3; transform: rotate(-1.5deg);">
+                <p><b>Hi, I'm Zainab!</b></p>
+                <p style="font-size: 13px; margin-top: 8px;">
+                    Backend Engineer & <br> ML Engineer.
+                </p>
+                <p style="font-size: 13px; margin-top: 8px;">
+                    Currently building AI models and writing some Java.
+                </p>
             </div>
         </div>
     </div>
