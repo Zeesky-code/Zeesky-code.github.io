@@ -157,3 +157,49 @@ if (isDesktop) {
     makeDraggable('window-about');
     makeDraggable('window-contact');
 }
+
+// --- Contact Form AJAX ---
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = new FormData(form);
+        const action = form.action;
+        const button = form.querySelector('button');
+        const originalText = button.textContent;
+
+        button.textContent = 'Sending...';
+        button.disabled = true;
+
+        try {
+            const response = await fetch(action, {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Success! Replace content with nice message
+                form.innerHTML = `
+                    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px;">
+                        <div style="font-size: 50px; margin-bottom: 20px;">✅</div>
+                        <h3 style="margin-bottom: 10px; color: #333;">Message Sent!</h3>
+                        <p style="color: #666; font-size: 14px;">Thanks for reaching out, Zainab.<br>I'll get back to you soon.</p>
+                        <button onclick="closeWindow('window-contact')" style="margin-top: 20px; background: #eee; color: #333; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer;">Close</button>
+                    </div>
+                `;
+            } else {
+                alert("Oops! There was a problem submitting your form");
+                button.textContent = originalText;
+                button.disabled = false;
+            }
+        } catch (error) {
+            alert("Oops! There was a problem submitting your form");
+            button.textContent = originalText;
+            button.disabled = false;
+        }
+    });
+}
