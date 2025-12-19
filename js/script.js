@@ -207,3 +207,30 @@ if (contactForm) {
         }
     });
 }
+
+// --- Tab Switching for About Window ---
+function switchTab(tabName, element) {
+    // 1. Hide all tabs
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(el => el.style.display = 'none');
+
+    // 2. Show target tab
+    const target = document.getElementById('tab-' + tabName);
+    if (target) {
+        target.style.display = 'block';
+        // Add a small fade in
+        target.style.opacity = '0';
+        target.style.transition = 'opacity 0.2s';
+        requestAnimationFrame(() => target.style.opacity = '1');
+    }
+
+    // 3. Update active sidebar item
+    // Remove active from all sidebar items (scoped to About window ideally, but simple class toggle works)
+    const sidebarItems = document.querySelectorAll('.sidebar-item');
+    sidebarItems.forEach(el => el.classList.remove('active'));
+
+    // Add active to clicked element
+    if (element) {
+        element.classList.add('active');
+    }
+}

@@ -191,95 +191,197 @@
                             style="width: 150px; background: rgba(240,240,240,0.8); backdrop-filter: blur(10px); padding: 15px; border-right: 1px solid rgba(0,0,0,0.1);">
                             <div style="font-size: 11px; color: #888; margin-bottom: 5px; font-weight: 600;">Favorites
                             </div>
-                            <div class="sidebar-item active">Home</div>
-                            <div class="sidebar-item">Desktop</div>
-                            <div class="sidebar-item">Documents</div>
-                            <div class="sidebar-item">Downloads</div>
+                            <div class="sidebar-item active" onclick="switchTab('home', this)">Home</div>
+                            <div
+                                style="font-size: 11px; font-weight: 600; color: #999; margin-bottom: 5px; margin-top: 15px; padding-left: 10px;">
+                                Content</div>
+                            <div class="sidebar-item" onclick="switchTab('medium', this)">Medium</div>
+                            <div class="sidebar-item" onclick="switchTab('youtube', this)">YouTube</div>
                         </div>
 
-                        <!-- Main Content -->
-                        <div style="flex: 1; padding: 25px; background: rgba(255,255,255,0.5);">
-                            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                        <!-- Main Content Area -->
+                        <div style="flex: 1; padding: 25px; background: rgba(255,255,255,0.5); position: relative;">
+
+                            <!-- TAB: HOME (Bio) -->
+                            <div id="tab-home" class="tab-content" style="display: block;">
+                                <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                                    <div
+                                        style="width: 80px; height: 80px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.15); overflow: hidden; border: 3px solid #fff; flex-shrink: 0;">
+                                        <img src="assets/biometric.png" alt="Zainab"
+                                            style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                    </div>
+                                    <div>
+                                        <h2 style="font-size: 20px; font-weight: 600; color: #333;">Zainab</h2>
+                                        <p style="color: #666;">Computer Engineer & Master's Student</p>
+                                    </div>
+                                </div>
                                 <div
-                                    style="width: 80px; height: 80px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.15); overflow: hidden; border: 3px solid #fff; flex-shrink: 0;">
-                                    <img src="assets/biometric.png" alt="Zainab"
-                                        style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                    style="line-height: 1.6; color: #444; font-size: 13px; overflow-y: auto; max-height: 200px;">
+                                    <p style="margin-bottom: 12px;">
+                                        Hello! I’m Zainab, an engineer who loves to build stuff. My journey began with a
+                                        fascination for the foundational logic of
+                                        computer engineering, leading me to specialize in Java backend development.
+                                        I’ve worked on fun web applications and microservices
+                                        for diverse projects, from university systems to legal-tech.
+                                    </p>
+                                    <p style="margin-bottom: 12px;">
+                                    As a current Master’s student, I have expanded my focus to Artificial Intelligence.
+                                        I'm currently do some Data Analysis and ML projects, especially for Healthcare
+                                        projects.
+                                        I believe data tells stories and we can use them to learn many things.
+                                    </p>
+                                    <p>
+                                        I love solving problems and writing about them. You'll probably find me buidling
+                                    tools to make my life easier or participating in ML competitions driven by a desire
+                                        to solve real-world problems through
+                                        technology.
+                                    </p>
                                 </div>
-                                <div>
-                                    <h2 style="font-size: 20px; font-weight: 600; color: #333;">Zainab</h2>
-                                    <p style="color: #666;">Computer Engineer & Master's Student</p>
+                            </div>
+
+                            <!-- TAB: MEDIUM -->
+                            <div id="tab-medium" class="tab-content" style="display: none;">
+                                <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                                    <div>
+                                        <h2 style="font-size: 20px; font-weight: 600; color: #333;">Writing</h2>
+                                        <p style="color: #666;">My thoughts on Tech & AI</p>
+                                    </div>
                                 </div>
+                                <div style="line-height: 1.6; color: #444; font-size: 13px;">
+                                    <p style="margin-bottom: 15px;">
+                                        I love writing on Medium! It helps me organize my thoughts and share what I
+                                        learn with the community.
+                                    </p>
+                                    <p style="margin-bottom: 20px;">
+                                        I write about everything new thing I learn in Machine Learning and Healthcare
+                                        AI.
+                                    </p>
+                                    <a href="https://zeeskylaw.medium.com/" target="_blank"
+                                        style="display: inline-block; background: #000; color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-weight: 500;">Read
+                                        my Articles</a>
+                                </div>
+                            </div>
+
+                            <!-- TAB: YOUTUBE -->
+                            <div id="tab-youtube" class="tab-content" style="display: none;">
+                                <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                                    <div style="font-size: 40px;">📺</div>
+                                    <div>
+                                        <h2 style="font-size: 20px; font-weight: 600; color: #333;">YouTube</h2>
+                                        <p style="color: #666;">Visual Learning</p>
+                                    </div>
+                                </div>
+                                <div style="line-height: 1.6; color: #444; font-size: 13px;">
+                                    <p style="margin-bottom: 15px;">
+                                        I also (try to) run a YouTube channel where I break down complex AI concepts
+                                        into
+                                        easy-to-understand videos.
+                                    </p>
+                                    <p style="margin-bottom: 20px;">
+                                        Same goal, sharing knowledge, but in a visual format.
+                                    </p>
+                                    <a href="https://www.youtube.com/channel/UCr8GABSeC6L105k27g3VU-w/" target="_blank"
+                                        style="display: inline-block; background: #ff0000; color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-weight: 500;">Visit
+                                        Channel</a>
+                                </div>
+                                <!-- TAB: DESKTOP -->
+                                <div id="tab-desktop" class="tab-content" style="display: none;">
+                                    <h2 style="font-size: 20px; font-weight: 600; color: #333; margin-bottom: 20px;">
+                                        Desktop</h2>
+                                    <div
+                                        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 15px;">
+                                        <div style="text-align: center;">
+                                            <img src="assets/icons/finder.png" style="width: 40px; margin-bottom: 5px;">
+                                            <div style="font-size: 11px; color: #333;">About Me</div>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <img src="assets/icons/terminal.png"
+                                                style="width: 40px; margin-bottom: 5px;">
+                                            <div style="font-size: 11px; color: #333;">Projects</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- TAB: DOCUMENTS (Resume) -->
+                                <div id="tab-documents" class="tab-content" style="display: none;">
+                                    <h2 style="font-size: 20px; font-weight: 600; color: #333; margin-bottom: 10px;">
+                                        Documents</h2>
+                                    <p style="color: #666; font-size: 13px; margin-bottom: 20px;">My professional
+                                        documents.</p>
+
+                                    <div
+                                        style="display: flex; align-items: center; gap: 15px; padding: 10px; background: #fff; border-radius: 8px; border: 1px solid #eee;">
+                                        <div style="font-size: 24px;">📄</div>
+                                        <div style="flex: 1;">
+                                            <div style="font-size: 13px; font-weight: 600; color: #333;">
+                                                Resume_Zainab.pdf</div>
+                                            <div style="font-size: 11px; color: #999;">PDF Document • 1.2 MB</div>
+                                        </div>
+                                        <button
+                                            style="border: none; background: #007aff; color: white; padding: 5px 12px; border-radius: 15px; font-size: 11px; cursor: pointer;">Download</button>
+                                    </div>
+                                </div>
+
+                                <!-- TAB: DOWNLOADS -->
+                                <div id="tab-downloads" class="tab-content" style="display: none;">
+                                    <h2 style="font-size: 20px; font-weight: 600; color: #333; margin-bottom: 10px;">
+                                        Downloads</h2>
+                                    <div
+                                        style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 150px; color: #999;">
+                                        <div style="font-size: 30px; margin-bottom: 10px;">📂</div>
+                                        <div style="font-size: 13px;">Folder is empty</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. CONTACT WINDOW (Mail) -->
+                    <div class="os-window" id="window-contact"
+                        style="width: 400px; height: 450px; opacity: 0; display:none;">
+                        <div class="window-header">
+                            <div class="traffic-lights">
+                                <div class="light red" onclick="toggleWindow('window-contact')"></div>
+                                <div class="light yellow" onclick="toggleWindow('window-contact')"></div>
+                                <div class="light green"></div>
+                            </div>
+                            <div class="window-title">New Message</div>
+                        </div>
+                        <form class="window-content" action="https://formspree.io/f/xwvepwdw" method="POST"
+                            target="_blank"
+                            style="background: #ffffff; color: #333; display: flex; flex-direction: column; margin: 0; height: 100%;">
+                            <div
+                                style="border-bottom: 1px solid #eee; padding: 10px 15px; font-size: 13px; color: #666; display: flex;">
+                                <span style="color: #888; width: 60px;">To:</span> <span
+                                    style="color: #007aff; background: #e3f2fd; padding: 0 6px; border-radius: 4px;">Zainab
+                                    (Secure)</span>
                             </div>
                             <div
-                                style="line-height: 1.6; color: #444; font-size: 13px; overflow-y: auto; max-height: 200px;">
-                                <p style="margin-bottom: 12px;">
-                                    Hello! I’m Zainab, an engineer who loves to build stuff. My journey began with a
-                                    fascination for the foundational logic of
-                                    computer engineering, leading me to specialize in Java backend development.
-                                    I’ve worked on fun web applications and microservices
-                                    for diverse projects, from university systems to legal-tech.
-                                </p>
-                                <p style="margin-bottom: 12px;">
-                                    As a current Master’s student, I have expanded my focus to Artificial Intelligence.
-                                    I'm currently do some Data Analysis and ML projects, especially for Healthcare
-                                    projects.
-                                    I believe data tells storeis and we can use them to learn many things.
-                                </p>
-                                <p>
-                                    I love solving problems and writing about them. You'll probably find me buidling
-                                    tools to make my life easier or participating in ML competitions driven by a desire
-                                    to solve real-world problems through
-                                    technology.
-                                </p>
+                                style="border-bottom: 1px solid #eee; padding: 10px 15px; font-size: 13px; color: #666; display: flex; align-items: center;">
+                                <span style="color: #888; width: 60px;">From:</span>
+                                <input type="email" name="email" placeholder="your@email.com" required
+                                    style="border: none; outline: none; font-size: 13px; width: 100%; color: #333;">
                             </div>
-                        </div>
+                            <div
+                                style="border-bottom: 1px solid #eee; padding: 10px 15px; font-size: 13px; color: #666; display: flex;">
+                                <span style="color: #888; width: 60px;">Subject:</span>
+                                <input type="text" name="subject" value="Let's work together"
+                                    style="border: none; outline: none; font-size: 13px; width: 100%; color: #333;">
+                            </div>
+                            <div style="flex: 1; padding: 15px;">
+                                <textarea name="message" required
+                                    style="width: 100%; height: 100%; border: none; resize: none; font-family: -apple-system; font-size: 15px; outline: none; color: #333;"
+                                    placeholder="Hey, I loved your portfolio..."></textarea>
+                            </div>
+                            <div
+                                style="padding: 10px 15px; background: #f9f9f9; text-align: right; border-top: 1px solid #eee;">
+                                <button type="submit"
+                                    style="background: #007aff; color: white; border: none; padding: 6px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer;">Send
+                                    Message</button>
+                            </div>
+                        </form>
                     </div>
-                </div>
-
-                <!-- 4. CONTACT WINDOW (Mail) -->
-                <div class="os-window" id="window-contact"
-                    style="width: 400px; height: 450px; opacity: 0; display:none;">
-                    <div class="window-header">
-                        <div class="traffic-lights">
-                            <div class="light red" onclick="toggleWindow('window-contact')"></div>
-                            <div class="light yellow" onclick="toggleWindow('window-contact')"></div>
-                            <div class="light green"></div>
-                        </div>
-                        <div class="window-title">New Message</div>
-                    </div>
-                    <form class="window-content" action="https://formspree.io/f/xwvepwdw" method="POST" target="_blank"
-                        style="background: #ffffff; color: #333; display: flex; flex-direction: column; margin: 0; height: 100%;">
-                        <div
-                            style="border-bottom: 1px solid #eee; padding: 10px 15px; font-size: 13px; color: #666; display: flex;">
-                            <span style="color: #888; width: 60px;">To:</span> <span
-                                style="color: #007aff; background: #e3f2fd; padding: 0 6px; border-radius: 4px;">Zainab
-                                (Secure)</span>
-                        </div>
-                        <div
-                            style="border-bottom: 1px solid #eee; padding: 10px 15px; font-size: 13px; color: #666; display: flex; align-items: center;">
-                            <span style="color: #888; width: 60px;">From:</span>
-                            <input type="email" name="email" placeholder="your@email.com" required
-                                style="border: none; outline: none; font-size: 13px; width: 100%; color: #333;">
-                        </div>
-                        <div
-                            style="border-bottom: 1px solid #eee; padding: 10px 15px; font-size: 13px; color: #666; display: flex;">
-                            <span style="color: #888; width: 60px;">Subject:</span>
-                            <input type="text" name="subject" value="Let's work together"
-                                style="border: none; outline: none; font-size: 13px; width: 100%; color: #333;">
-                        </div>
-                        <div style="flex: 1; padding: 15px;">
-                            <textarea name="message" required
-                                style="width: 100%; height: 100%; border: none; resize: none; font-family: -apple-system; font-size: 15px; outline: none; color: #333;"
-                                placeholder="Hey, I loved your portfolio..."></textarea>
-                        </div>
-                        <div
-                            style="padding: 10px 15px; background: #f9f9f9; text-align: right; border-top: 1px solid #eee;">
-                            <button type="submit"
-                                style="background: #007aff; color: white; border: none; padding: 6px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer;">Send
-                                Message</button>
-                        </div>
-                    </form>
-                </div>
 
             </main>
 
