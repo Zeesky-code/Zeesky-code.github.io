@@ -511,7 +511,7 @@ body {
 /* --- Mobile / Responsive Overrides --- */
 @media (max-width: 768px) {
 
-    /* 1. Remove the "Computer Frame" simulation */
+    /* 1. Computer Frame: Fullscreen on mobile but keep the 'Screen' feel */
     .computer-frame {
         width: 100vw;
         height: 100vh;
@@ -526,99 +526,115 @@ body {
         border-radius: 0;
     }
 
-    /* 2. Mobile Dock: Bottom Bar */
+    /* 2. Dock: Floating & Centered (Surface Pro Style) */
     .dock-container {
-        width: 100%;
-        height: auto;
-        bottom: 0;
-        left: 0;
-        transform: none;
-        background: rgba(255, 255, 255, 0.85);
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 0;
+        /* Revert to floating style */
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        max-width: 90%;
+        height: 60px;
+        padding: 8px 15px;
+        background: var(--dock-bg);
+        border: 1px solid var(--dock-border);
+        border-radius: 18px;
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
 
         display: flex;
         flex-wrap: nowrap;
-        justify-content: space-evenly;
-        align-items: flex-end;
-        padding: 10px 5px 25px 5px;
-        gap: 0;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
         z-index: 1000;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
     .dock-item {
-        width: auto;
-        height: auto;
-        flex: 1;
-        flex-direction: column;
+        width: 45px;
+        height: 45px;
+        flex: 0 0 auto;
+        /* Don't stretch */
         margin: 0 !important;
-        transform: none !important;
+        flex-direction: row;
+        /* Icon only usually */
     }
 
     .dock-item img {
-        width: 45px;
-        height: 45px;
-        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
-        border-radius: 12px;
-        margin-bottom: 4px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+        border-radius: 0;
+        /* Keep icon shape */
     }
 
-    .dock-item:hover img {
-        transform: none;
-    }
-
-    .dock-item::after {
-        /* Tiny labels */
-        font-size: 10px;
-        color: #333;
-        text-shadow: none;
-        margin-top: 0;
-        width: auto;
+    /* Hide the separator on really small screens if tight */
+    .dock-container>div[style*="width: 1px"] {
+        display: block;
+        /* Keep it if there's space */
+        height: 30px;
+        margin: 0 2px;
     }
 
     .dock-indicator {
-        display: none;
+        display: block;
+        /* Show indicators again */
+        width: 3px;
+        height: 3px;
+        bottom: -4px;
     }
 
-    /* 3. Fullscreen Windows */
+    /* 3. Windows: Floating Cards (Not Fullscreen) */
     .os-window {
-        width: 100% !important;
-        height: 100% !important;
-        border-radius: 0;
-        border: none;
-        top: 0 !important;
-        left: 0 !important;
-        margin: 0;
-        box-shadow: none;
-    }
+        width: 94% !important;
+        /* Almost full width but valid margins */
+        height: 75% !important;
+        /* Leave room for dock and header */
+        top: 60px !important;
+        /* Below menu bar */
+        left: 3% !important;
+        /* Centered */
 
-    .desktop-environment {
-        padding: 0;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     }
 
     .window-header {
-        height: 50px;
-        background: #f5f5f7;
+        height: 40px;
+        /* Keep header standard */
     }
 
     .traffic-lights {
-        gap: 12px;
+        gap: 8px;
+        /* Restore standard spacing */
     }
 
-    .light {
-        width: 14px;
-        height: 14px;
+    /* 4. Sticky Notes: Scaled down & Repositioned */
+    /* Instead of hiding, let's tuck them or scale them */
+    .sticky-note {
+        transform: scale(0.6) !important;
+        /* Make them smaller */
+        z-index: 0;
+        /* Behind windows */
     }
 
-    /* Hide specific non-mobile friendly things */
-    .menu-left span:not(.apple-logo):not(:nth-child(2)) {
-        display: none;
+    #note-1 {
+        top: 50px !important;
+        right: -20px !important;
+        /* Tuck off screen slightly */
     }
 
-    /* Adjust grid layout for "Trash" and separator */
-    .dock-container>div[style*="width: 1px"] {
+    #note-2 {
+        top: 180px !important;
+        left: -20px !important;
+    }
+
+    /* Hide menu items on mobile, show only time */
+    .menu-left span:not(.apple-logo) {
         display: none;
     }
 }
