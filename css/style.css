@@ -503,8 +503,8 @@ body {
 }
 
 .sticky-note:hover {
-    transform: rotate(0deg) scale(1.02);
-    /* Straighten on hover */
+    transform: rotate(0deg) scale(1.02) !important;
+    /* Force override of inline rotation */
     z-index: 5;
 }
 
